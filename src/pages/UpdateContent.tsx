@@ -1,5 +1,5 @@
+// src/pages/UpdateContent.tsx
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useStore } from '../store';
 
 function UpdateContent() {
@@ -8,13 +8,8 @@ function UpdateContent() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    axios.post('/api/update-content', { content })
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    // Removed axios.post and replaced with console.log since we cannot make API calls in a static spa
+    console.log({ content });
   };
 
   return (
